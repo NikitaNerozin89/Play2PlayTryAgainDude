@@ -49,7 +49,9 @@ class Model {
             // fetch the videos
             
             if response.items != nil {
+                DispatchQueue.main.async {
                 self.delegate?.videosFetched(response.items!)
+                }
             }
             dump(response)
         }
